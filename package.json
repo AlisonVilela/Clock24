@@ -1,0 +1,19 @@
+{
+  "name": "clock24h",
+  "version": "1.0.0",
+  "description": "Relógio analógico de 24 horas",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlisonVilela/Clock24.git"
+  },
+  "author": "Alison Vilela",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlisonVilela/Clock24/issues"
+  },
+  "homepage": "https://github.com/AlisonVilela/Clock24#readme"
+}

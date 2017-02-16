@@ -6,5 +6,30 @@
 </head>
 <body>
   <canvas id="clock" width="600" height="600">Seu navegador não tem suporte ao canvas!</canvas>
+  <script>
+    var canvas = document.getElementById('clock');
+    var canvas2d = canvas.getContext('2d');
+
+    canvas2d.clearRect(0,0,canvas.width,canvas.height);
+
+    canvas2d.save();
+    canvas2d.translate((canvas.width/2),(canvas.height/2));
+
+    for (i = 1; i <= 60; i++) {
+      angulo = Math.PI/30*i;
+      seno = Math.sin(angulo);
+      cosseno = Math.cos(angulo);
+
+      if (i % 5 == 0) {
+        canvas2d.fillStyle="rgba(0, 0, 0, 1)";
+        canvas2d.textBaseline="middle";
+        canvas2d.textAlign="center";
+        canvas2d.font= "Bold 20px Arial";
+        nx = seno *  (150);
+        ny = cosseno * -(150);
+        canvas2d.fillText(i/5,nx,ny);
+      };
+    }
+  </script>
 </body>
-</head>  
+</head>

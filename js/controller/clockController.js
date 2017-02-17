@@ -1,4 +1,7 @@
 app.controller('clockController', function($scope) {
+  $scope.header = "Relógio analógico de 24 horas";
+  $scope.footer = "Alison Vilela";
+
   $scope.active = false;
   $scope.button = "Mostar Relógio";
   var canvas = null;

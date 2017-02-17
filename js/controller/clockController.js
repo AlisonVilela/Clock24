@@ -1,6 +1,34 @@
 app.controller('clockController', function($scope) {
+  $scope.active = false;
+  $scope.button = "Mostar Relógio";
+  var canvas = null;
+  var div = null;
+
+  $scope.clickButton = function(){
+	  if ($scope.active) {
+		$scope.active = false;
+		$scope.button = "Mostar Relógio";
+	  } else {
+		$scope.active = true;
+		$scope.button = "Esconder Relógio";
+	  }
+  }
+
+  window.addEventListener("load", function()
+  {
+    canvas = document.getElementById('clock');
+    div = document.getElementById('canvas')
+    function resize()
+    {
+      canvas.width = (div.offsetWidth < 190? 190: div.offsetWidth);
+      canvas.height = (div.offsetHeight < 190? 190: div.offsetHeight);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+    Clock();
+  });
+
   function Clock(){
-    var canvas = document.getElementById('clock');
     var canvas2d = canvas.getContext('2d');
     var min = 0;
 
@@ -90,5 +118,4 @@ app.controller('clockController', function($scope) {
 		canvas2d.restore();
     setTimeout(Clock, 1000);
   };
-  Clock();
 });

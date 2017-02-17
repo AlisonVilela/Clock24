@@ -1,0 +1,27 @@
+* { padding: 0; margin: 0; }
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+#fullheight {
+    width: 250px;
+    background: blue;
+}
+body {
+  position: relative;
+}
+
+#container {
+  margin: auto;
+  width: 60%;
+  height: 100%;
+}
+
+#canvas {
+  height: 80%;
+}
+
+#button {
+  padding: 20px;
+  text-align: center;
+}

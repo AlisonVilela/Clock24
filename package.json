@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AlisonVilela/Clock24#readme",
   "dependencies": {
-    "angular": "^1.6.2"
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7"
   }
 }

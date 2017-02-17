@@ -35,6 +35,13 @@ app.controller('clockController', function($scope) {
 
     canvas2d.clearRect(0,0,canvas.width,canvas.height);
 
+    canvas2d.lineWidth= (size/2) - ((size/2)/1.01);
+    canvas2d.beginPath();
+    canvas2d.arc((canvas.width/2),(canvas.height/2), size/2,0,Math.PI*2);
+    canvas2d.fillStyle="rgba(255, 255, 255, 0.5)";
+    canvas2d.fill();
+    canvas2d.stroke();
+
     canvas2d.save();
     canvas2d.translate((canvas.width/2),(canvas.height/2));
 
@@ -67,6 +74,11 @@ app.controller('clockController', function($scope) {
          min = 0;
         }
 
+        canvas2d.beginPath();
+        canvas2d.arc(nx,ny,(size/2) - ((size/2)/1.06),0,Math.PI*2);
+        canvas2d.fillStyle="rgba(0, 0, 0, 1)";
+        canvas2d.fill();
+        canvas2d.fillStyle="rgba(255, 255, 255, 1)";
         canvas2d.fillText(min,nx,ny);
       };
     }

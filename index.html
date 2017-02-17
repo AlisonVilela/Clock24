@@ -5,17 +5,17 @@
 	<title>Clock 24h</title>
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="frameworks/bootstrap/dist/css/bootstrap.min.css">
 
-  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="frameworks/angular/angular.min.js"></script>
 	<script src="js/app.js"></script>
 	<script src="js/controller/clockController.js"></script>
 </head>
-<body>
+<body ng-controller="clockController">
   <header class="navbar-fixed-top bg-primary">
     <h3>{{header}}</h3>
   </header>
-  <div ng-controller="clockController" id="container">
+  <div id="container">
       <div id="canvas">
   			<canvas ng-show="active" id="clock">Seu navegador não tem suporte ao canvas!</canvas>
   		</div>

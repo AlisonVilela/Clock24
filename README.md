@@ -6,3 +6,6 @@ Desenvoldimento de um relógio analógico de 24 horas utilizando canvas do HTML5
 
 AngularJS<br/>
 Bootstrap
+
+## GitHub Pages
+<a href="https://alisonvilela.github.io/Clock24/">Visualizar</a>

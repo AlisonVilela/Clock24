@@ -48,6 +48,53 @@
         canvas2d.fillText(min,nx,ny);
       };
     }
+    var agora = new Date();
+		var horas = agora.getHours();
+		var minutos = agora.getMinutes();
+		var segundos = agora.getSeconds();
+
+		canvas2d.save();
+		//Horas
+		canvas2d.fillStyle="rgba(0, 0, 0, 1)"; //Preto
+		canvas2d.rotate(Math.PI/12 * (horas + (minutos / 60) + (segundos / 3600)));
+
+		canvas2d.beginPath();
+		canvas2d.moveTo(-5,20);
+		canvas2d.lineTo(5,20);
+		canvas2d.lineTo(0,-80);
+		canvas2d.closePath();
+
+		canvas2d.fill();
+		canvas2d.restore();
+		canvas2d.save();
+
+		//Minutos
+		canvas2d.fillStyle="rgba(0, 0, 0, 1)"; //Preto
+		canvas2d.rotate(Math.PI/60 * (horas % 2 === 0 ? minutos : minutos + 60));
+
+		canvas2d.beginPath();
+		canvas2d.moveTo(-5,20);
+		canvas2d.lineTo(5,20);
+		canvas2d.lineTo(0,-150);
+		canvas2d.closePath();
+
+		canvas2d.fill();
+		canvas2d.restore();
+		canvas2d.save();
+
+		//Segundos
+		canvas2d.rotate(Math.PI/60 * (horas % 2 === 0 ? segundos : segundos + 60));
+		canvas2d.fillStyle="rgba(255, 51, 51, 1)"; //Vermelho
+
+		canvas2d.beginPath();
+		canvas2d.moveTo(-2,20);
+		canvas2d.lineTo(2,20);
+		canvas2d.lineTo(0,-150);
+		canvas2d.closePath();
+
+		canvas2d.fill();
+		canvas2d.restore();
+		canvas2d.restore();
   </script>
 </body>
 </head>

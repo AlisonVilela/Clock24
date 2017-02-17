@@ -31,6 +31,7 @@ app.controller('clockController', function($scope) {
   function Clock(){
     var canvas2d = canvas.getContext('2d');
     var min = 0;
+    var size = canvas.width < canvas.height? canvas.width-6: canvas.height-6;
 
     canvas2d.clearRect(0,0,canvas.width,canvas.height);
 
@@ -47,14 +48,14 @@ app.controller('clockController', function($scope) {
       min = 0;
       if (i % 5 == 0) {
         canvas2d.fillStyle="rgba(0, 0, 0, 1)";
-        canvas2d.font= "Bold 20px Arial";
-        nx = seno *  (150);
-        ny = cosseno * -(150);
+        canvas2d.font= "Bold " + Math.round((size/2) - ((size/2)/1.15)).toString() + "px Arial";
+        nx = seno * ((size / 2) - ((size / 2) / 10));
+        ny = cosseno * -((size / 2) - ((size / 2) / 10));
         canvas2d.fillText(i/5,nx,ny);
 
-        canvas2d.font= "12px Arial";
-        nx = seno *  (100);
-        ny = cosseno * -(100);
+        canvas2d.font= Math.round((size/2) - ((size/2)/1.08)).toString() + "px Arial";
+        nx = seno * ((size / 2) - ((size / 2) / 2.5));
+        ny = cosseno * -((size / 2) - ((size / 2) / 2.5));
 
         //Lógica criada para que os minutos a esquerda comecem novamento de forma crescente no sentido horario
         if (i > 60) {
@@ -79,11 +80,11 @@ app.controller('clockController', function($scope) {
 		canvas2d.fillStyle="rgba(0, 0, 0, 1)"; //Preto
 		canvas2d.rotate(Math.PI/12 * (horas + (minutos / 60) + (segundos / 3600)));
 
-		canvas2d.beginPath();
-		canvas2d.moveTo(-5,20);
-		canvas2d.lineTo(5,20);
-		canvas2d.lineTo(0,-80);
-		canvas2d.closePath();
+    canvas2d.beginPath();
+    canvas2d.moveTo(-((size / 2) / 30),(size / 2) - ((size / 2) / 1.25));
+    canvas2d.lineTo((size / 2) / 30,((size / 2) - ((size / 2) / 1.25)));
+    canvas2d.lineTo(0,-((size / 2) - ((size / 2) / 2.2)));
+    canvas2d.closePath();
 
 		canvas2d.fill();
 		canvas2d.restore();
@@ -93,11 +94,11 @@ app.controller('clockController', function($scope) {
 		canvas2d.fillStyle="rgba(0, 0, 0, 1)"; //Preto
 		canvas2d.rotate(Math.PI/60 * (horas % 2 === 0 ? minutos : minutos + 60));
 
-		canvas2d.beginPath();
-		canvas2d.moveTo(-5,20);
-		canvas2d.lineTo(5,20);
-		canvas2d.lineTo(0,-150);
-		canvas2d.closePath();
+    canvas2d.beginPath();
+    canvas2d.moveTo(-((size / 2) / 30),(size / 2) - ((size / 2) / 1.25));
+    canvas2d.lineTo((size / 2) / 30,((size / 2) - ((size / 2) / 1.25)));
+    canvas2d.lineTo(0,-((size / 2) - ((size / 2) / 8)));
+    canvas2d.closePath();
 
 		canvas2d.fill();
 		canvas2d.restore();
@@ -107,11 +108,11 @@ app.controller('clockController', function($scope) {
 		canvas2d.rotate(Math.PI/60 * (minutos % 2 === 0 ? segundos : segundos + 60));
 		canvas2d.fillStyle="rgba(255, 51, 51, 1)"; //Vermelho
 
-		canvas2d.beginPath();
-		canvas2d.moveTo(-2,20);
-		canvas2d.lineTo(2,20);
-		canvas2d.lineTo(0,-150);
-		canvas2d.closePath();
+    canvas2d.beginPath();
+    canvas2d.moveTo(-((size / 2) / 60),(size / 2) - ((size / 2) / 1.25));
+    canvas2d.lineTo((size / 2) / 60,((size / 2) - ((size / 2) / 1.25)));
+    canvas2d.lineTo(0,-((size / 2) - ((size / 2) / 8)));
+    canvas2d.closePath();
 
 		canvas2d.fill();
 		canvas2d.restore();

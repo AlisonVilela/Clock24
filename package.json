@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AlisonVilela/Clock24/issues"
   },
-  "homepage": "https://github.com/AlisonVilela/Clock24#readme"
+  "homepage": "https://github.com/AlisonVilela/Clock24#readme",
+  "dependencies": {
+    "angular": "^1.6.2"
+  }
 }

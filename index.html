@@ -7,6 +7,7 @@
 <body>
   <canvas id="clock" width="600" height="600">Seu navegador não tem suporte ao canvas!</canvas>
   <script>
+  function Clock(){
     var canvas = document.getElementById('clock');
     var canvas2d = canvas.getContext('2d');
     var min = 0;
@@ -83,7 +84,7 @@
 		canvas2d.save();
 
 		//Segundos
-		canvas2d.rotate(Math.PI/60 * (horas % 2 === 0 ? segundos : segundos + 60));
+		canvas2d.rotate(Math.PI/60 * (minutos % 2 === 0 ? segundos : segundos + 60));
 		canvas2d.fillStyle="rgba(255, 51, 51, 1)"; //Vermelho
 
 		canvas2d.beginPath();
@@ -95,6 +96,9 @@
 		canvas2d.fill();
 		canvas2d.restore();
 		canvas2d.restore();
+    setTimeout(Clock, 1000);
+  };
+  Clock();
   </script>
 </body>
 </head>
